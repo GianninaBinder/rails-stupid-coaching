@@ -1,0 +1,21 @@
+<div class="container">
+  <h2>Your coach's answer</h2>
+
+  <div class="answer">
+    <p>You: <%= params[:answer]%></p>
+  </div>
+  <br>
+  <div class="answer">
+    <p>Coach:
+      <%if params[:answer].downcase == "i am going to work right now!"%>
+          "Great!"
+          <% elsif params[:answer].end_with?("?") %>
+            "Silly question, get dressed and go to work!"
+          <% else %>
+            "I don't care, get dressed and go to work!"
+          <% end %>
+    </p>
+  </div>
+
+  <%= link_to "Ask another question", ask_path %>
+</div>
